@@ -1,0 +1,71 @@
+/* Visual unificado: painel de abertura, cartões com barra de acento vermelha, seções numeradas */
+.card {
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+}
+.card > h2:first-child { margin-top: 0; }
+
+/* Painel de abertura (folha de rosto) */
+.head {
+  position: relative; margin-top: 16px; padding: 56px 24px 28px; text-align: center;
+  border: 1px solid var(--line); border-top: 8px solid var(--accent); border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--accent-soft) 0%, var(--paper-alt) 70%);
+  box-shadow: var(--shadow);
+}
+.head p { margin: 0; text-align: center; }
+h1 { font: 700 clamp(28px, 7vw, 46px)/1.15 var(--font); text-transform: uppercase; margin: 12px 0 6px; color: var(--accent); overflow-wrap: anywhere; }
+.sub { margin-top: 8px !important; font-weight: 700; }
+.pills { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 18px 0 0; padding: 0; }
+.pills li { font-size: 10pt; font-weight: 700; padding: 5px 12px; border-radius: 99px; border: 1.5px solid var(--accent); color: var(--accent); background: var(--paper); }
+
+.theme-toggle {
+  position: absolute; top: 14px; right: 14px;
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; min-height: 44px;
+  border-radius: 99px; font-size: 10pt; font-weight: 700; background: var(--paper);
+}
+.theme-toggle:hover { background: var(--accent-soft); }
+
+/* Numeração progressiva (NBR 6024) */
+h2 { font: 700 12pt/1.5 var(--font); text-transform: uppercase; margin: 0 0 12px; color: var(--accent); }
+h3 { font: 700 12pt/1.5 var(--font); text-transform: uppercase; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--accent); scroll-margin-top: 16px; }
+h2.unnum { text-align: left; }
+.head { padding-bottom: 28px; }
+p { margin: 0 0 12px; text-align: justify; hyphens: auto; }
+
+.top-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 16px; margin-top: 16px; }
+.sumario ol { list-style: none; margin: 0; padding: 0; }
+.sumario ol ol { padding-left: 20px; }
+.sumario li { margin: 2px 0; }
+.sumario a { text-decoration: none; }
+.sumario a:hover { text-decoration: underline; }
+#introducao p { margin: 0; }
+
+.grid { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 24px; margin-top: 16px; align-items: start; }
+.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); display: flex; flex-direction: column; gap: 20px; }
+main > h2 { margin-top: 0; }
+.lab { font: 700 10pt/1 var(--font); text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.search { width: 100%; padding: 10px 12px; }
+.search:focus { box-shadow: 0 0 0 3px var(--accent-soft); border-color: var(--accent); }
+.cats, .az { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { padding: 5px 11px; border-radius: 99px; font-size: 10pt; }
+.chip:hover { background: var(--accent-soft); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.az { gap: 4px; }
+.az button { width: 34px; height: 34px; color: var(--accent); font-size: 10pt; font-weight: 700; }
+.az button:hover:not(:disabled) { background: var(--accent-soft); }
+.az button:disabled { color: var(--line); cursor: default; }
+.count { font-size: 10pt; color: var(--muted); }
+.referencias { margin-top: 24px; }
+
+/* Equipe (folha de rosto): autores, turma e orientação */
+.equipe { margin-top: 16px; }
+.equipe-list { list-style: disc outside; margin: 0 0 14px; padding-left: 22px; columns: 3; column-gap: 32px; }
+.equipe-list li { margin: 2px 0; break-inside: avoid; }
+.equipe-list li::marker { color: var(--accent); }
+.equipe p { text-align: left; margin: 0; }
+.equipe .turma { padding-top: 12px; border-top: 1px dashed var(--line); }
+.equipe .orient { margin-top: 4px; }
