@@ -254,7 +254,7 @@ const BASE = [
     ],
     nota: "Os autores listam critérios um pouco diferentes para uma boa hipótese. Confira o capítulo sobre hipóteses em Marconi e Lakatos (2017).",
     ex: "Estudantes que usam um aplicativo com leitor de tela integrado concluem as tarefas em menos tempo do que os que usam um leitor externo.",
-    ver: ["problema-pesquisa", "variaveis", "projeto-pesquisa"]
+    ver: ["problema-pesquisa", "variaveis", "projeto-pesquisa", "falseabilidade"]
   },
   {
     id: "variaveis", termo: "Variáveis", cat: "Fundamentos",
@@ -266,7 +266,7 @@ const BASE = [
       "Podem ser qualitativas (categorias) ou quantitativas (números)."
     ],
     ex: "Na hipótese \"mais tempo de estudo melhora a nota\", o tempo de estudo é a variável independente e a nota é a dependente.",
-    ver: ["hipotese", "problema-pesquisa", "tipos-pesquisa"]
+    ver: ["hipotese", "problema-pesquisa", "tipos-pesquisa", "operacionalizacao"]
   },
   {
     id: "populacao-amostra", termo: "População e amostra", cat: "Fundamentos",
@@ -278,7 +278,7 @@ const BASE = [
       "Quando a população é pequena, é possível estudar todos os elementos."
     ],
     ex: "Em um curso com 300 matriculados, sortear 60 alunos para responder ao questionário é amostragem probabilística. Convidar quem está na biblioteca é não probabilística.",
-    ver: ["variaveis", "projeto-pesquisa", "tipos-pesquisa"]
+    ver: ["variaveis", "projeto-pesquisa", "tipos-pesquisa", "saturacao-teorica"]
   },
   {
     id: "revisao-sistematica", termo: "Revisão sistemática da literatura", cat: "Tipos e produtos",
@@ -330,7 +330,7 @@ const BASE = [
       "Os questionários são frequentemente usados instrumentalmente como uma ferramenta padronizada e padronizadora para fazer um conjunto de perguntas aos participantes."
     ],
     ex: "Em estudos de pesquisa, questionários são comumente usados como ferramentas de coleta de dados, seja como única fonte de informação ou em combinação com outras técnicas em estudos de métodos mistos.",
-    ver: ["populacao-amostra", "variaveis", "etica-pesquisa", "tipos-pesquisa"]
+    ver: ["populacao-amostra", "variaveis", "etica-pesquisa", "tipos-pesquisa", "triangulacao-metodologica"]
   },
   {
     id: "bibliometria", termo: "Bibliometria", cat: "Tipos e produtos",
@@ -340,6 +340,51 @@ const BASE = [
     ],
     ex: "Aplicação de métodos estatísticos e matemáticos para mensurar, quantificar e analisar a produção, a disseminação e o impacto do conhecimento registrado em documentos científicos.",
     ver: ["periodico", "repositorios", "revisao-sistematica"]
+  },
+  {
+    id: "falseabilidade", termo: "Falseabilidade", cat: "Fundamentos",
+    def: "A falseabilidade é um critério filosófico utilizado para distinguir teorias científicas de afirmações não científicas. Uma teoria é considerada falseável quando pode ser submetida a testes capazes de demonstrar que ela está errada.",
+    mais: [
+      "Segundo Karl Popper, uma teoria científica deve permitir testes que possam contrariar suas previsões. Portanto, nenhuma teoria deve ser considerada absolutamente incontestável."
+    ],
+    ex: "Uma hipótese afirma que determinada bactéria não sobrevive a temperaturas acima de 60 °C. Experimentos podem testar essa afirmação e eventualmente refutá-la.",
+    ver: ["hipotese", "metodologia-cientifica", "reprodutibilidade"]
+  },
+  {
+    id: "reprodutibilidade", termo: "Reprodutibilidade", cat: "Fundamentos",
+    def: "A reprodutibilidade é a possibilidade de obter resultados consistentes quando uma pesquisa é realizada novamente por outros pesquisadores, seguindo os mesmos procedimentos e utilizando os mesmos dados e condições.",
+    mais: [
+      "É um dos princípios importantes para a confiabilidade científica, pois permite que resultados sejam verificados independentemente, fortalecendo as evidências produzidas pela pesquisa."
+    ],
+    ex: "Um pesquisador disponibiliza os dados e os procedimentos utilizados em uma análise estatística. Outro pesquisador utiliza os mesmos materiais e consegue reproduzir os resultados.",
+    ver: ["falseabilidade", "revisao-sistematica", "metodologia-cientifica"]
+  },
+  {
+    id: "saturacao-teorica", termo: "Saturação teórica", cat: "Tipos e produtos",
+    def: "A saturação teórica é um critério utilizado em pesquisas qualitativas para determinar quando a coleta de dados pode ser encerrada, pois novas informações deixam de acrescentar elementos relevantes à construção teórica da pesquisa.",
+    mais: [
+      "É especialmente utilizada em pesquisas que envolvem entrevistas e grupos focais. O pesquisador identifica esse ponto quando as novas informações coletadas deixam de contribuir significativamente para o desenvolvimento da análise."
+    ],
+    ex: "Durante uma pesquisa sobre hábitos de consumo, o pesquisador realiza entrevistas até perceber que os novos participantes apresentam informações que já apareceram nas entrevistas anteriores, sem acrescentar elementos relevantes à análise.",
+    ver: ["populacao-amostra", "tipos-pesquisa", "triangulacao-metodologica"]
+  },
+  {
+    id: "triangulacao-metodologica", termo: "Triangulação metodológica", cat: "Tipos e produtos",
+    def: "A triangulação metodológica consiste na utilização de diferentes métodos ou técnicas de pesquisa para investigar um mesmo fenômeno, ampliando as possibilidades de análise e compreensão dos resultados.",
+    mais: [
+      "A combinação de abordagens permite observar um objeto de estudo por diferentes perspectivas. Pode envolver métodos quantitativos e qualitativos, como questionários, entrevistas e observações."
+    ],
+    ex: "Uma pesquisa sobre satisfação dos estudantes utiliza questionários para obter dados estatísticos e entrevistas para compreender as experiências e opiniões dos participantes.",
+    ver: ["tipos-pesquisa", "questionario", "saturacao-teorica"]
+  },
+  {
+    id: "operacionalizacao", termo: "Operacionalização", cat: "Fundamentos",
+    def: "A operacionalização é o processo de transformar conceitos abstratos em variáveis ou indicadores que possam ser observados, mensurados ou classificados durante uma pesquisa científica.",
+    mais: [
+      "Esse procedimento permite que conceitos teóricos sejam investigados empiricamente. Para isso, o pesquisador estabelece critérios e indicadores que tornam possível analisar determinado fenômeno."
+    ],
+    ex: "Em uma pesquisa sobre qualidade de vida, o pesquisador transforma esse conceito abstrato em indicadores mensuráveis, como qualidade do sono, renda, alimentação e acesso à saúde.",
+    ver: ["variaveis", "hipotese", "problema-pesquisa"]
   }
 ];
 
@@ -348,6 +393,7 @@ const BASE = [
 const ABNT_ORG = "ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS";
 const ACESSO = " Acesso em: 28 out. 2026.";
 const ACESSO31 = " Acesso em: 31 out. 2026.";
+const ACESSO1NOV = " Acesso em: 1 nov. 2026.";
 const REFS = {
   nbr10520: { aut: ABNT_ORG, tit: "ABNT NBR 10520", pos: ": informação e documentação: citações em documentos: apresentação. Rio de Janeiro: ABNT, 2023." },
   nbr14724: { aut: ABNT_ORG, tit: "ABNT NBR 14724", pos: ": informação e documentação: trabalhos acadêmicos: apresentação. 4. ed. Rio de Janeiro: ABNT, 2024." },
@@ -372,7 +418,12 @@ const REFS = {
   mostratec: { aut: "", tit: "METODOLOGIA científica", pos: ". [S. l.]: Mostratec Liberato, [s. d.]. Disponível em: https://mostratec.liberato.com.br/metodologia-cientifica/." + ACESSO31 },
   ranganathan: { aut: "RANGANATHAN, Prya; CADUFF, Carlo", tit: "Designing and validating a research questionnaire - Part 1", pos: ". [S. l.]: National Library of Medicine, 2023. Disponível em: https://pmc.ncbi.nlm.nih.gov/articles/PMC10405529/." + ACESSO31 },
   ninkov: { aut: "NINKOV, Anton; FRANK, Jason; MAGGIO, Lauren", tit: "Bibliometrics: methods for studying academic publishing", pos: ". [S. l.]: National Library of Medicine, 2021. Disponível em: https://pmc.ncbi.nlm.nih.gov/articles/PMC9240160/." + ACESSO31 },
-  cns510: { aut: "BRASIL. Conselho Nacional de Saúde", tit: "Resolução nº 510, de 7 de abril de 2016", pos: ". Dispõe sobre as normas aplicáveis a pesquisas em Ciências Humanas e Sociais. Diário Oficial da União: seção 1, Brasília, DF, n. 98, p. 44-46, 24 maio 2016." }
+  cns510: { aut: "BRASIL. Conselho Nacional de Saúde", tit: "Resolução nº 510, de 7 de abril de 2016", pos: ". Dispõe sobre as normas aplicáveis a pesquisas em Ciências Humanas e Sociais. Diário Oficial da União: seção 1, Brasília, DF, n. 98, p. 44-46, 24 maio 2016." },
+  penha: { aut: "PENHA, Patrícia Silveira", pre: "A lógica da pesquisa científica de Karl Popper: a falseabilidade como um critério de demarcação científica. ", tit: "Revista Ideação", pos: ", [S. l.], n. 46, jul./dez. 2022. Disponível em: https://periodicos.uefs.br/index.php/revistaideacao/article/view/7372." + ACESSO1NOV },
+  ferreira: { aut: "FERREIRA, Manuela Klanovicz; VANZ, Samile Andrea de Souza", pre: "Reprodutibilidade em e-science: uma visão geral dos conceitos relacionados e das ferramentas de suporte mais citadas. ", tit: "Encontros Bibli: revista eletrônica de biblioteconomia e ciência da informação", pos: ", Florianópolis, v. 30, p. 1-25, 2025. DOI: 10.5007/1518-2924.2025.e103385. Disponível em: https://periodicos.ufsc.br/index.php/eb/article/view/103385." + ACESSO1NOV },
+  fontanella: { aut: "FONTANELLA, Bruno José Barcellos et al", pre: "Amostragem em pesquisas qualitativas: proposta de procedimentos para constatar saturação teórica. ", tit: "Cadernos de Saúde Pública", pos: ", Rio de Janeiro, v. 27, n. 2, p. 388-394, 2011. DOI: 10.1590/S0102-311X2011000200020. Disponível em: https://www.scielo.br/j/csp/a/3bsWNzMMdvYthrNCXmY9kJQ/." + ACESSO1NOV },
+  teixeira: { aut: "TEIXEIRA, Juliana Cristina; NASCIMENTO, Marco César Ribeiro; CARRIERI, Alexandre de Pádua", pre: "Triangulação entre métodos na administração: gerando conversações paradigmáticas ou meras validações “convergentes”? ", tit: "Revista de Administração Pública", pos: ", Rio de Janeiro, v. 46, n. 1, p. 191-220, 2012. DOI: 10.1590/S0034-76122012000100010. Disponível em: https://www.scielo.br/j/rap/a/JfyxvvrqBwqGDg6Z9jgGBvM/." + ACESSO1NOV },
+  gil2008: { aut: "GIL, Antonio Carlos", tit: "Métodos e técnicas de pesquisa social", pos: ". 6. ed. São Paulo: Atlas, 2008." }
 };
 
 
@@ -384,7 +435,9 @@ const CIT = {
   ackoff: "ACKOFF, 1989", rowley: "ROWLEY, 2007", bigonha: "BIGONHA, 2024", gil: "GIL, 2017",
   leite: "LEITE; ASSIS; MELO, 2015", prodanov: "PRODANOV; FREITAS, 2013", wazlawick: "WAZLAWICK, 2021",
   marconi: "MARCONI; LAKATOS, 2017", kitchenham: "KITCHENHAM; CHARTERS, 2007", cns510: "BRASIL, 2016",
-  mina: "MINA, 2026", mostratec: "METODOLOGIA..., [s. d.]", ranganathan: "RANGANATHAN; CADUFF, 2023", ninkov: "NINKOV; FRANK; MAGGIO, 2021"
+  mina: "MINA, 2026", mostratec: "METODOLOGIA..., [s. d.]", ranganathan: "RANGANATHAN; CADUFF, 2023", ninkov: "NINKOV; FRANK; MAGGIO, 2021",
+  penha: "PENHA, 2022", ferreira: "FERREIRA; VANZ, 2025", fontanella: "FONTANELLA et al., 2011",
+  teixeira: "TEIXEIRA; NASCIMENTO; CARRIERI, 2012", gil2008: "GIL, 2008"
 };
 Object.keys(REFS).forEach((k) => { REFS[k].cit = CIT[k]; REFS[k].key = k; });
 
@@ -417,7 +470,12 @@ const FONTES = {
   "lacuna-pesquisa": ["mina"],
   "metodologia-cientifica": ["mostratec"],
   "questionario": ["ranganathan"],
-  "bibliometria": ["ninkov"]
+  "bibliometria": ["ninkov"],
+  "falseabilidade": ["penha"],
+  "reprodutibilidade": ["ferreira"],
+  "saturacao-teorica": ["fontanella"],
+  "triangulacao-metodologica": ["teixeira"],
+  "operacionalizacao": ["gil2008"]
 };
 // Em ordem alfabética, como exige a NBR 6023.
 BASE.forEach((e) => {
