@@ -1,0 +1,31 @@
+/* Impressão conforme a ABNT NBR 14724: A4, margens 3 cm (esq./sup.) e 2 cm (dir./inf.), fonte 12, entrelinhas 1,5, páginas numeradas no canto superior direito */
+@page {
+  size: A4;
+  margin: 3cm 2cm 2cm 3cm;
+  @top-right { content: counter(page); font: 10pt Arial, Helvetica, sans-serif; }
+}
+:root, :root[data-theme] {
+  --paper: #fff !important; --ink: #000 !important; --muted: #000 !important;
+  --line: #999 !important; --blue: #000 !important; --blue-soft: #fff !important; --mark: #fff !important;
+  --font-display: Arial, Helvetica, sans-serif; --font-body: Arial, Helvetica, sans-serif; --font-mono: Arial, Helvetica, sans-serif;
+  color-scheme: light;
+}
+body { font: 400 12pt/1.5 Arial, Helvetica, sans-serif; text-align: justify; padding: 0; }
+.side, .dots, .holes, .tog, .del, .study, .tag.own + .sp { display: none !important; }
+.wrap { max-width: none; }
+.grid { display: block; padding-top: 12pt; }
+.head { padding: 0 0 12pt; border-bottom: 1pt solid #000; }
+h1 { font: 700 20pt/1.2 Arial, Helvetica, sans-serif; margin: 6pt 0; }
+.alt { font: 400 12pt/1.5 Arial, Helvetica, sans-serif; }
+.letter { font: 700 14pt/1.5 Arial, Helvetica, sans-serif; margin: 18pt 0 0; break-after: avoid; }
+.term { font: 700 12pt/1.5 Arial, Helvetica, sans-serif; }
+.entry { break-inside: avoid; padding: 6pt 0; }
+.more { background: none; padding: 0; max-width: none; }
+.def, .sub { max-width: none; }
+.src, .chk, .rel { font-size: 10pt; }
+a { color: #000; text-decoration: none; }
+.refs { break-before: page; border-top: 0; padding-top: 0; margin-top: 0; }
+.refs h2 { font: 700 12pt/1.5 Arial, Helvetica, sans-serif; text-align: center; text-transform: uppercase; }
+.refs ul { max-width: none; gap: 12pt; line-height: 1; }
+.chk { display: none; }
+.foot { font-size: 10pt; }

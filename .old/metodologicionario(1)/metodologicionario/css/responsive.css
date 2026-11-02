@@ -1,0 +1,8 @@
+/* Telas estreitas e preferência por menos movimento */
+@media (max-width: 820px) {
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .side { position: static; }
+  .head { padding-left: 34px; }
+  .holes { width: 18px; background-size: 18px 34px; background-image: radial-gradient(circle at 9px 11px, var(--line) 0 5px, transparent 6px); }
+}
+@media (prefers-reduced-motion: reduce) { .entry.hit { animation: none; background: var(--mark); } }

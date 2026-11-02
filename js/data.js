@@ -304,6 +304,42 @@ const BASE = [
     nota: "As regras mudam conforme o tipo de pesquisa e a instituição. Antes de coletar dados com pessoas, consulte o Comitê de Ética em Pesquisa da sua instituição.",
     ex: "Aplicar um questionário a estudantes identificados exige avaliar o caso com o CEP. Analisar dados públicos sem identificação pode ser dispensado.",
     ver: ["pesquisa", "projeto-pesquisa", "populacao-amostra"]
+  },
+  {
+    id: "lacuna-pesquisa", termo: "Lacuna de pesquisa", cat: "Fundamentos",
+    def: "Pode ser uma questão sem resposta, uma área que não foi explorada com profundidade suficiente ou uma perspectiva que está amplamente ausente na literatura.",
+    mais: [
+      "Identificar uma lacuna de pesquisa é importante porque explica por que seu estudo é necessário e como ele agrega valor à área, em vez de repetir o que já se sabe."
+    ],
+    ex: "Uma lacuna de pesquisa é o espaço entre o que você já sabe a partir de pesquisas existentes e o que ainda precisa ser compreendido.",
+    ver: ["problema-pesquisa", "projeto-pesquisa", "revisao-sistematica"]
+  },
+  {
+    id: "metodologia-cientifica", termo: "Metodologia científica", cat: "Fundamentos",
+    def: "A metodologia científica é o estudo da ação científica, ou seja, dos caminhos e dos instrumentos utilizados para conduzir uma pesquisa científica.",
+    mais: [
+      "Aborda as principais regras para uma produção científica, fornecendo os métodos, as técnicas e os instrumentos para o desenvolvimento de um trabalho com rigor científico."
+    ],
+    ex: "A metodologia científica é o estudo analítico e crítico dos métodos de investigação que devem ser adotados em um trabalho científico.",
+    ver: ["pesquisa", "tipos-pesquisa", "projeto-pesquisa"]
+  },
+  {
+    id: "questionario", termo: "Questionário", cat: "Tipos e produtos",
+    def: "Um questionário de pesquisa pode ser definido como uma ferramenta de coleta de dados que consiste em uma série de perguntas ou itens que são usados para coletar informações dos entrevistados.",
+    mais: [
+      "Os questionários são frequentemente usados instrumentalmente como uma ferramenta padronizada e padronizadora para fazer um conjunto de perguntas aos participantes."
+    ],
+    ex: "Em estudos de pesquisa, questionários são comumente usados como ferramentas de coleta de dados, seja como única fonte de informação ou em combinação com outras técnicas em estudos de métodos mistos.",
+    ver: ["populacao-amostra", "variaveis", "etica-pesquisa", "tipos-pesquisa"]
+  },
+  {
+    id: "bibliometria", termo: "Bibliometria", cat: "Tipos e produtos",
+    def: "A bibliometria é o estudo da publicação acadêmica que utiliza estatísticas para descrever tendências de publicação e destacar relações entre trabalhos publicados.",
+    mais: [
+      "De forma semelhante à epidemiologia, os pesquisadores buscam responder a perguntas sobre uma área de estudo com base em dados sobre publicações (por exemplo, autores, tópicos, financiamento)."
+    ],
+    ex: "Aplicação de métodos estatísticos e matemáticos para mensurar, quantificar e analisar a produção, a disseminação e o impacto do conhecimento registrado em documentos científicos.",
+    ver: ["periodico", "repositorios", "revisao-sistematica"]
   }
 ];
 
@@ -311,6 +347,7 @@ const BASE = [
 // Montagem: aut. pre<strong>tit</strong>pos
 const ABNT_ORG = "ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS";
 const ACESSO = " Acesso em: 28 out. 2026.";
+const ACESSO31 = " Acesso em: 31 out. 2026.";
 const REFS = {
   nbr10520: { aut: ABNT_ORG, tit: "ABNT NBR 10520", pos: ": informação e documentação: citações em documentos: apresentação. Rio de Janeiro: ABNT, 2023." },
   nbr14724: { aut: ABNT_ORG, tit: "ABNT NBR 14724", pos: ": informação e documentação: trabalhos acadêmicos: apresentação. 4. ed. Rio de Janeiro: ABNT, 2024." },
@@ -331,6 +368,10 @@ const REFS = {
   wazlawick: { aut: "WAZLAWICK, Raul Sidnei", tit: "Metodologia de pesquisa para ciência da computação", pos: ". 3. ed. Rio de Janeiro: GEN LTC, 2021." },
   marconi: { aut: "MARCONI, Marina de Andrade; LAKATOS, Eva Maria", tit: "Fundamentos de metodologia científica", pos: ". 8. ed. São Paulo: Atlas, 2017." },
   kitchenham: { aut: "KITCHENHAM, Barbara; CHARTERS, Stuart", tit: "Guidelines for performing systematic literature reviews in software engineering", pos: ". Version 2.3. Keele: Keele University; Durham: Durham University, 2007. (EBSE Technical Report, EBSE-2007-01)." },
+  mina: { aut: "MINA", tit: "Research gap: meaning, examples, and how you identify gaps", pos: ". [S. l.]: ResearchRabbit, 2026. Disponível em: https://www.researchrabbit.ai/articles/research-gap-meaning-examples." + ACESSO31 },
+  mostratec: { aut: "", tit: "METODOLOGIA científica", pos: ". [S. l.]: Mostratec Liberato, [s. d.]. Disponível em: https://mostratec.liberato.com.br/metodologia-cientifica/." + ACESSO31 },
+  ranganathan: { aut: "RANGANATHAN, Prya; CADUFF, Carlo", tit: "Designing and validating a research questionnaire - Part 1", pos: ". [S. l.]: National Library of Medicine, 2023. Disponível em: https://pmc.ncbi.nlm.nih.gov/articles/PMC10405529/." + ACESSO31 },
+  ninkov: { aut: "NINKOV, Anton; FRANK, Jason; MAGGIO, Lauren", tit: "Bibliometrics: methods for studying academic publishing", pos: ". [S. l.]: National Library of Medicine, 2021. Disponível em: https://pmc.ncbi.nlm.nih.gov/articles/PMC9240160/." + ACESSO31 },
   cns510: { aut: "BRASIL. Conselho Nacional de Saúde", tit: "Resolução nº 510, de 7 de abril de 2016", pos: ". Dispõe sobre as normas aplicáveis a pesquisas em Ciências Humanas e Sociais. Diário Oficial da União: seção 1, Brasília, DF, n. 98, p. 44-46, 24 maio 2016." }
 };
 
@@ -342,7 +383,8 @@ const CIT = {
   acm: "ACM, [s. d.]", ieee: "IEEE, [s. d.]", apa: "APA, 2020",
   ackoff: "ACKOFF, 1989", rowley: "ROWLEY, 2007", bigonha: "BIGONHA, 2024", gil: "GIL, 2017",
   leite: "LEITE; ASSIS; MELO, 2015", prodanov: "PRODANOV; FREITAS, 2013", wazlawick: "WAZLAWICK, 2021",
-  marconi: "MARCONI; LAKATOS, 2017", kitchenham: "KITCHENHAM; CHARTERS, 2007", cns510: "BRASIL, 2016"
+  marconi: "MARCONI; LAKATOS, 2017", kitchenham: "KITCHENHAM; CHARTERS, 2007", cns510: "BRASIL, 2016",
+  mina: "MINA, 2026", mostratec: "METODOLOGIA..., [s. d.]", ranganathan: "RANGANATHAN; CADUFF, 2023", ninkov: "NINKOV; FRANK; MAGGIO, 2021"
 };
 Object.keys(REFS).forEach((k) => { REFS[k].cit = CIT[k]; REFS[k].key = k; });
 
@@ -371,7 +413,11 @@ const FONTES = {
   "variaveis": ["gil", "marconi"],
   "populacao-amostra": ["marconi", "prodanov"],
   "revisao-sistematica": ["kitchenham"],
-  "etica-pesquisa": ["cns510"]
+  "etica-pesquisa": ["cns510"],
+  "lacuna-pesquisa": ["mina"],
+  "metodologia-cientifica": ["mostratec"],
+  "questionario": ["ranganathan"],
+  "bibliometria": ["ninkov"]
 };
 // Em ordem alfabética, como exige a NBR 6023.
 BASE.forEach((e) => {

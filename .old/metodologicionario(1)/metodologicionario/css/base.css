@@ -1,0 +1,39 @@
+/* Tokens de cor/fonte, tema claro/escuro e reset básico */
+:root {
+  --paper: #fbfcff;
+  --ink: #15182a;
+  --muted: #566082;
+  --line: #cfd8ee;
+  --blue: #1b3a9e;
+  --blue-soft: #e4eafb;
+  --mark: #fff0a3;
+  --ok: #1f7a4d;
+  --font-display: "Caveat", "Segoe Print", "Bradley Hand", cursive;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1322; --ink: #e8ebf8; --muted: #9ba5c6; --line: #263050;
+    --blue: #93acff; --blue-soft: #1a2342; --mark: #5a4d12; --ok: #6fd3a0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1322; --ink: #e8ebf8; --muted: #9ba5c6; --line: #263050;
+  --blue: #93acff; --blue-soft: #1a2342; --mark: #5a4d12; --ok: #6fd3a0;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font: 400 16px/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+a { color: var(--blue); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 3px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; }

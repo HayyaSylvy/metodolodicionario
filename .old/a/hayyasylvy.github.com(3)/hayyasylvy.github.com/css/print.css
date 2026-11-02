@@ -1,0 +1,43 @@
+/* Impressão (ABNT NBR 14724:2024): A4; margens esquerda e superior 3 cm, direita e inferior 2 cm;
+   Arial 12; entrelinhas 1,5; texto justificado; referências alinhadas à esquerda, espaço simples;
+   numeração de páginas no canto superior direito. */
+@page {
+  size: A4;
+  margin: 3cm 2cm 2cm 3cm;
+  @top-right { content: counter(page); font: 10pt Arial, Helvetica, sans-serif; color: #000; }
+}
+@media print {
+  :root, :root[data-theme] {
+    --paper: #fff; --paper-alt: #fff; --ink: #000; --muted: #000; --line: #999;
+    --accent: #000; --on-accent: #fff; --accent-soft: #fff; --mark: #fff;
+    color-scheme: light;
+  }
+  body { font: 400 12pt/1.5 Arial, Helvetica, sans-serif; padding: 0; background: #fff; color: #000; }
+  .wrap { max-width: none; }
+  .pills, .side, .tog, .study, .theme-toggle, .az, .cats, .search, .lab, .rel, .foot { display: none !important; }
+  .grid { display: block; padding: 0; }
+  .card, .entry, .head { background: none; box-shadow: none; border: 0; border-radius: 0; padding: 0; margin: 0; }
+  .head { padding: 0 0 12pt; border-bottom: 1pt solid #000; }
+  .top-grid { display: block; }
+  .card { margin-bottom: 12pt; }
+  h2, h3 { color: #000; border: 0; }
+  .k { color: #000; text-transform: none; letter-spacing: normal; }
+  h1 { font: 700 16pt/1.5 Arial, Helvetica, sans-serif; color: #000; }
+  h2, h3, .term { break-after: avoid; }
+  .resumo, .sumario { break-inside: avoid; }
+  .sumario { break-after: page; }
+  .entry { break-inside: avoid; border-top: .5pt solid #999; padding: 6pt 0; margin: 0; }
+  .more { background: none; border: 0; padding: 0; max-width: none; }
+    .def { max-width: none; }
+  p, .more ul { text-align: justify; }
+  .num { color: #000; }
+  a { color: #000; text-decoration: none; }
+    .drawer-btn, .drawer-chev, .drawer-count { display: none !important; }
+  .drawer-h { margin: 6pt 0 0; }
+  .drawer-h::before { content: "Fontes"; font: 700 11pt/1.5 Arial, Helvetica, sans-serif; }
+  .drawer-body { display: block; visibility: visible; }
+  .drawer-inner, .is-open .drawer-inner { padding: 0; margin: 0; border: 0; background: none; overflow: visible; }
+  .reflist li, .drawer .reflist li { font-size: 12pt; line-height: 1; text-align: left; margin: 0 0 12pt; break-inside: avoid; }
+  .cit { font-size: 12pt; }
+  .referencias { break-before: page; }
+}

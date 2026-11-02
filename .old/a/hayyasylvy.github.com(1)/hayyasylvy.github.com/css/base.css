@@ -1,0 +1,57 @@
+/* Tokens: Catppuccin Latte (claro) e Mocha (escuro), acento vermelho (Red). Fonte Arial, corpo 12 pt, entrelinhas 1,5 (ABNT NBR 14724). */
+:root {
+  /* Latte */
+  --paper: #eff1f5;      /* base */
+  --paper-alt: #e6e9ef;  /* mantle */
+  --ink: #4c4f69;        /* text */
+  --muted: #5c5f77;      /* subtext1 */
+  --line: #bcc0cc;       /* surface1 */
+  --accent: #d20f39;     /* red */
+  --on-accent: #eff1f5;
+  --accent-soft: #dce0e8; /* crust */
+  --mark: #f2d5cf;
+  --ok: #40a02b;
+  --font: Arial, Helvetica, sans-serif;
+  --radius: 10px;
+  --shadow: 0 2px 6px rgba(76, 79, 105, .12);
+  --t: .2s ease;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  /* Mocha */
+  --paper: #1e1e2e;
+  --paper-alt: #181825;
+  --ink: #cdd6f4;
+  --muted: #bac2de;      /* subtext1 */
+  --line: #45475a;       /* surface1 */
+  --accent: #f38ba8;     /* red */
+  --on-accent: #11111b;  /* crust */
+  --accent-soft: #313244; /* surface0 */
+  --mark: #45475a;
+  --ok: #a6e3a1;
+  --shadow: 0 2px 8px rgba(0, 0, 0, .35);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 12pt/1.5 var(--font);
+  padding: 0 max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px));
+  transition: background var(--t), color var(--t);
+}
+.wrap { max-width: 1120px; margin: 0 auto; }
+
+a { color: var(--accent); }
+button, input, select, textarea {
+  font: inherit; color: inherit; background: var(--paper);
+  border: 1.5px solid var(--line); border-radius: var(--radius);
+  transition: border-color var(--t), background var(--t);
+}
+button { cursor: pointer; }
+button:hover:not(:disabled), input:hover { border-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+::selection { background: var(--accent); color: var(--on-accent); }

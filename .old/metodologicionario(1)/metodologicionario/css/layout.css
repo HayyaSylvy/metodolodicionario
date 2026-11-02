@@ -1,0 +1,27 @@
+/* Layout: folha de caderno pautado. Índice fixo à esquerda (busca, categorias, A–Z), verbetes em linhas pautadas à direita. */
+/* Cabeçalho */
+.head { position: relative; padding: 36px 0 28px 44px; border-bottom: 2px solid var(--blue); }
+.holes { position: absolute; left: 0; top: 28px; bottom: 28px; width: 22px;
+  background: radial-gradient(circle at 11px 11px, var(--line) 0 6px, transparent 7px) 0 0 / 22px 34px repeat-y; }
+.date { font: 500 13px/1 var(--font-mono); color: var(--muted); letter-spacing: .08em; }
+h1 { font: 700 clamp(44px, 9vw, 92px)/.95 var(--font-display); margin: 10px 0 8px; color: var(--blue); text-wrap: balance; overflow-wrap: anywhere; }
+.alt { font: 600 clamp(20px, 3.4vw, 28px)/1.2 var(--font-display); color: var(--muted); }
+.sub { margin: 14px 0 0; max-width: 60ch; color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 40px; padding-top: 28px; }
+.side { align-self: start; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); display: flex; flex-direction: column; gap: 22px; }
+.lab { font: 500 11px/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+
+.search { width: 100%; padding: 10px 12px; border: 1.5px solid var(--line); background: var(--paper); border-radius: 4px; }
+.search:focus { border-color: var(--blue); }
+
+.cats { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1.5px solid var(--line); background: transparent; padding: 5px 11px; border-radius: 99px; cursor: pointer; font-size: 14px; }
+.chip:hover { border-color: var(--blue); }
+.chip[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: var(--paper); }
+
+.az { display: flex; flex-wrap: wrap; gap: 4px; }
+.az button { width: 30px; height: 30px; border: 0; background: transparent; font: 500 14px var(--font-mono); cursor: pointer; border-radius: 4px; color: var(--blue); }
+.az button:hover:not(:disabled) { background: var(--blue-soft); }
+.az button:disabled { color: var(--line); cursor: default; }
+.count { font: 400 13px var(--font-mono); color: var(--muted); }
